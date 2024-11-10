@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - '**'
+      - "**"
   pull_request: {}
 
 jobs:
@@ -13,27 +13,27 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint
     steps:
-    - name: checkout
-      uses: actions/checkout@v4
+      - name: checkout
+        uses: actions/checkout@v4
 
-    - name: set up python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.8'
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
-    - name: install deps
-      run: pip install -r requirements-test.txt
+      - name: install deps
+        run: pip install -r requirements-test.txt
 
-    - uses: pre-commit/action@v3.0.1
-      with:
-        extra_args: --all-files
+      - uses: pre-commit/action@v3.0.1
+        with:
+          extra_args: --all-files
   test:
     name: Test py${{ matrix.python }} on ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python: ['3.8', '3.9', '3.10', '3.11', '3.12', '3.13']
+        python: ["3.10", "3.11", "3.12", "3.13"]
 
     env:
       PYTHON: ${{ matrix.python }}
@@ -42,29 +42,29 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - name: set up python
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python }}
+      - name: set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
 
-    - run: pip install -r requirements-test.txt
+      - run: pip install -r requirements-test.txt
 
-    - name: test
-      run: coverage run -m pytest --durations=10
-      env:
-        COVERAGE_FILE: .coverage.${{ runner.os }}-py${{ matrix.python }}-without-dotenv
-        CONTEXT: ${{ runner.os }}-py${{ matrix.python }}-without-dotenv
+      - name: test
+        run: coverage run -m pytest --durations=10
+        env:
+          COVERAGE_FILE: .coverage.${{ runner.os }}-py${{ matrix.python }}-without-dotenv
+          CONTEXT: ${{ runner.os }}-py${{ matrix.python }}-without-dotenv
 
-    - run: coverage combine
-    - run: coverage xml
+      - run: coverage combine
+      - run: coverage xml
 
-    - uses: codecov/codecov-action@v4.5.0
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        file: ./coverage.xml
-        env_vars: PYTHON,OS
+      - uses: codecov/codecov-action@v4.5.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          env_vars: PYTHON,OS
 
   release:
     name: Release
@@ -81,7 +81,7 @@ jobs:
       - name: set up python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: "3.10"
 
       - name: install
         run: pip install -U build

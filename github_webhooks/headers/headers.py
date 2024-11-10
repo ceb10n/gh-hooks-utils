@@ -13,16 +13,16 @@ _INVALID_EVENT_MSG = "An invalid event was received."
 
 _USER_AGENT_PREFIX = "GitHub-Hookshot/"
 
-_X_HUB_SIGNATURE_DESCRIPTION = """This header is sent if the webhook 
-is configured with a secret. This is the HMAC hex digest of the request 
-body, and is generated  using the SHA-1 hash function and the secret as 
-the HMAC key. X-Hub-Signature is provided for compatibility with existing 
-integrations. We recommend that you use the more secure X-Hub-Signature-256 
+_X_HUB_SIGNATURE_DESCRIPTION = """This header is sent if the webhook
+is configured with a secret. This is the HMAC hex digest of the request
+body, and is generated  using the SHA-1 hash function and the secret as
+the HMAC key. X-Hub-Signature is provided for compatibility with existing
+integrations. We recommend that you use the more secure X-Hub-Signature-256
 instead.
 """
 
-_X_HUB_SIGNATURE_256_DESCRIPTION = """This header is sent if the webhook is 
-configured with a secret. This is the HMAC hex digest of the request body, 
+_X_HUB_SIGNATURE_256_DESCRIPTION = """This header is sent if the webhook is
+configured with a secret. This is the HMAC hex digest of the request body,
 and is generated using the SHA-256 hash function and the secret as the HMAC key.
 """
 

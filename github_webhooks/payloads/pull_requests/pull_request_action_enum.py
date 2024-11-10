@@ -1,8 +1,8 @@
-from enum import StrEnum, unique
+from enum import Enum, unique
 
 
 @unique
-class PullRequestActionEnum(StrEnum):
+class PullRequestActionEnum(str, Enum):
     ASSIGNED = "assigned"
     AUTO_MERGE_DISABLED = "auto_merge_disabled"
     AUTO_MERGE_ENABLED = "auto_merge_enabled"

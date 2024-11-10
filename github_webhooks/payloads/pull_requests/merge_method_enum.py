@@ -1,8 +1,8 @@
-from enum import StrEnum, unique
+from enum import Enum, unique
 
 
 @unique
-class MergeMethodEnum(StrEnum):
+class MergeMethodEnum(str, Enum):
     MERGE = "merge"
     SQUASH = "squash"
     REBASE = "rebase"

@@ -13,6 +13,19 @@ _INVALID_EVENT_MSG = "An invalid event was received."
 
 _USER_AGENT_PREFIX = "GitHub-Hookshot/"
 
+_X_HUB_SIGNATURE_DESCRIPTION = """This header is sent if the webhook 
+is configured with a secret. This is the HMAC hex digest of the request 
+body, and is generated  using the SHA-1 hash function and the secret as 
+the HMAC key. X-Hub-Signature is provided for compatibility with existing 
+integrations. We recommend that you use the more secure X-Hub-Signature-256 
+instead.
+"""
+
+_X_HUB_SIGNATURE_256_DESCRIPTION = """This header is sent if the webhook is 
+configured with a secret. This is the HMAC hex digest of the request body, 
+and is generated using the SHA-256 hash function and the secret as the HMAC key.
+"""
+
 
 class WebhookHeaders(BaseModel):
     """Headers sent by Github Webhooks.
@@ -34,22 +47,10 @@ class WebhookHeaders(BaseModel):
         description="A globally unique identifier (GUID) to identify the event.",
     )
     x_hub_signature: str | None = Field(
-        None,
-        description=(
-            "This header is sent if the webhook is configured with a secret. ",
-            "This is the HMAC hex digest of the request body, and is generated ",
-            "using the SHA-1 hash function and the secret as the HMAC key. ",
-            "X-Hub-Signature is provided for compatibility with existing integrations. ",
-            "We recommend that you use the more secure X-Hub-Signature-256 instead",
-        ),
+        None, description=_X_HUB_SIGNATURE_DESCRIPTION
     )
     x_hub_signature_256: str | None = Field(
-        None,
-        description=(
-            "X-Hub-Signature-256: This header is sent if the webhook is configured with ",
-            "a secret. This is the HMAC hex digest of the request body, and is generated ",
-            "using the SHA-256 hash function and the secret as the HMAC key. ",
-        ),
+        None, description=_X_HUB_SIGNATURE_256_DESCRIPTION
     )
     user_agent: str = Field(
         ...,

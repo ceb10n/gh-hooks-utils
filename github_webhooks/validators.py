@@ -1,15 +1,12 @@
 import hashlib
 import hmac
-from typing import Any
 
 
-def is_signature_valid(
-    payload: dict[str, Any], secret: str, signature: str
-) -> bool:
+def is_signature_valid(payload: bytes, secret: str, signature: str) -> bool:
     """Validates the signature of the Github event.
 
     Args:
-        payload (dict[str, Any]): Payload sent by github's webhook
+        payload (bytes): Payload sent by github's webhook
         secret (str): Secret created by the owner of the app
         signature (str): The signature sent via header X-Hub-Signature-256
 

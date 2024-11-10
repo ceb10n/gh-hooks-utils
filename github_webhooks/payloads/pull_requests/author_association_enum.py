@@ -1,8 +1,8 @@
-from enum import StrEnum, unique
+from enum import Enum, unique
 
 
 @unique
-class AuthorAssociationEnum(StrEnum):
+class AuthorAssociationEnum(str, Enum):
     COLLABORATOR = "COLLABORATOR"
     CONTRIBUTOR = "CONTRIBUTOR"
     FIRST_TIMER = "FIRST_TIMER"

@@ -1,7 +1,7 @@
-from enum import StrEnum, unique
+from enum import Enum, unique
 
 
 @unique
-class MilestoneStateEnum(StrEnum):
+class MilestoneStateEnum(str, Enum):
     OPEN = "open"
     CLOSED = "closed"

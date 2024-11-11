@@ -12,13 +12,13 @@ repos:
   hooks:
   - id: lint
     name: Lint
-    entry: ruff check github_webhooks
+    entry: ruff check gh_hooks
     types: [python]
     language: system
     pass_filenames: false
   - id: mypy
     name: Mypy
-    entry: mypy github_webhooks
+    entry: mypy gh_hooks
     types: [python]
     language: system
     pass_filenames: false

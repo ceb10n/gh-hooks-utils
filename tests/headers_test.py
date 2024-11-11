@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from github_webhooks.headers.headers import (
+from gh_hooks.headers.headers import (
     _INVALID_EVENT_MSG,
     _INVALID_USER_AGENT_MSG,
     _USER_AGENT_PREFIX,

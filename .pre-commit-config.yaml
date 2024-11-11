@@ -12,13 +12,13 @@ repos:
   hooks:
   - id: lint
     name: Lint
-    entry: ruff check gh_hooks
+    entry: ruff check gh_hooks_utils
     types: [python]
     language: system
     pass_filenames: false
   - id: mypy
     name: Mypy
-    entry: mypy gh_hooks
+    entry: mypy gh_hooks_utils
     types: [python]
     language: system
     pass_filenames: false

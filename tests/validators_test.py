@@ -1,4 +1,4 @@
-from gh_hooks import validators
+from gh_hooks_utils import validators
 
 
 def test_is_signature_valid_should_validate_incoming_raw_body_as_bytes():

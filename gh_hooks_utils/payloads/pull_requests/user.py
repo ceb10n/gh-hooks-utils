@@ -23,5 +23,5 @@ class User(BaseModel):
     received_events_url: str
     user_type: str = Field(..., alias="type")
     site_admin: bool
-    starred_at: str | None
+    starred_at: str | None = None
     user_view_type: str

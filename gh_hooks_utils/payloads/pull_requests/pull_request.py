@@ -31,14 +31,14 @@ class PullRequest(BaseModel):
     user: User
     body: str | None = None
     labels: list[Label]
-    milestone: Milestone
+    milestone: Milestone | None = None
     active_lock_reason: str | None = None
     created_at: str
     updated_at: str | None = None
     closed_at: str | None = None
     merged_at: str | None = None
     merge_commit_sha: str | None = None
-    assignee: User
+    assignee: User | None = None
     assignees: list[User] | None = None
     requested_reviewers: list[User] | None = None
     requested_teams: list[Team] | None = None
@@ -52,7 +52,7 @@ class PullRequest(BaseModel):
     mergeable: bool | None = None
     rebaseable: bool | None = None
     mergeable_state: str
-    merged_by: User
+    merged_by: User | None = None
     comments: int
     review_comments: int
     maintainer_can_modify: bool

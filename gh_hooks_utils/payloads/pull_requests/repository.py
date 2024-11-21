@@ -10,10 +10,10 @@ class Repository(BaseModel):
     node_id: str
     name: str
     full_name: str
-    license: License
+    license: License | None = None
     forks: int
     permissions: Permissions | None = None
-    owner: User
+    owner: User | None = None
     private: bool
     html_url: str
     description: str | None

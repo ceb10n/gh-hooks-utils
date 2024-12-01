@@ -11,74 +11,74 @@ class Repository(BaseModel):
     name: str
     full_name: str
     license: License | None = None
-    forks: int
+    forks: int | None = None
     permissions: Permissions | None = None
     owner: User | None = None
     private: bool
-    html_url: str
-    description: str | None
-    fork: bool
-    url: str
-    archive_url: str
-    assignees_url: str
-    blobs_url: str
-    branches_url: str
-    collaborators_url: str
-    comments_url: str
-    commits_url: str
-    compare_url: str
-    contents_url: str
-    contributors_url: str
-    deployments_url: str
-    downloads_url: str
-    events_url: str
-    forks_url: str
-    git_commits_url: str
-    git_refs_url: str
-    git_tags_url: str
-    git_url: str
-    issue_comment_url: str
-    issue_events_url: str
-    issues_url: str
-    keys_url: str
-    labels_url: str
-    languages_url: str
-    merges_url: str
-    milestones_url: str
-    notifications_url: str
-    pulls_url: str
-    releases_url: str
-    ssh_url: str
-    stargazers_url: str
-    statuses_url: str
-    subscribers_url: str
-    subscription_url: str
-    tags_url: str
-    teams_url: str
-    trees_url: str
-    clone_url: str
-    mirror_url: str | None
-    hooks_url: str
-    svn_url: str
-    homepage: str | None
-    language: str | None
-    forks_count: int
-    stargazers_count: int
-    watchers_count: int
-    size: int
-    default_branch: str
-    open_issues_count: int
+    html_url: str | None = None
+    description: str | None = None
+    fork: bool | None = None
+    url: str | None = None
+    archive_url: str | None = None
+    assignees_url: str | None = None
+    blobs_url: str | None = None
+    branches_url: str | None = None
+    collaborators_url: str | None = None
+    comments_url: str | None = None
+    commits_url: str | None = None
+    compare_url: str | None = None
+    contents_url: str | None = None
+    contributors_url: str | None = None
+    deployments_url: str | None = None
+    downloads_url: str | None = None
+    events_url: str | None = None
+    forks_url: str | None = None
+    git_commits_url: str | None = None
+    git_refs_url: str | None = None
+    git_tags_url: str | None = None
+    git_url: str | None = None
+    issue_comment_url: str | None = None
+    issue_events_url: str | None = None
+    issues_url: str | None = None
+    keys_url: str | None = None
+    labels_url: str | None = None
+    languages_url: str | None = None
+    merges_url: str | None = None
+    milestones_url: str | None = None
+    notifications_url: str | None = None
+    pulls_url: str | None = None
+    releases_url: str | None = None
+    ssh_url: str | None = None
+    stargazers_url: str | None = None
+    statuses_url: str | None = None
+    subscribers_url: str | None = None
+    subscription_url: str | None = None
+    tags_url: str | None = None
+    teams_url: str | None = None
+    trees_url: str | None = None
+    clone_url: str | None = None
+    mirror_url: str | None = None
+    hooks_url: str | None = None
+    svn_url: str | None = None
+    homepage: str | None = None
+    language: str | None = None
+    forks_count: int | None = None
+    stargazers_count: int | None = None
+    watchers_count: int | None = None
+    size: int | None = None
+    default_branch: str | None = None
+    open_issues_count: int | None = None
     is_template: bool | None = None
     topics: list[str] | None = None
-    has_issues: bool
-    has_projects: bool
-    has_wiki: bool
-    has_pages: bool
-    has_downloads: bool
+    has_issues: bool | None = None
+    has_projects: bool | None = None
+    has_wiki: bool | None = None
+    has_pages: bool | None = None
+    has_downloads: bool | None = None
     has_discussions: bool | None = None
-    archived: bool
-    disabled: bool
-    visibility: str
+    archived: bool | None = None
+    disabled: bool | None = None
+    visibility: str | None = None
     pushed_at: str | None
     created_at: str | None
     updated_at: str | None
@@ -95,8 +95,8 @@ class Repository(BaseModel):
     merge_commit_message: str | None = None
     allow_merge_commit: bool | None = None
     allow_forking: bool | None = None
-    open_issues: int
-    watchers: int
+    open_issues: int | None = None
+    watchers: int | None = None
     master_branch: str | None = None
     starred_at: str | None = None
     anonymous_access_enabled: bool | None = None

@@ -1,5 +1,6 @@
 __all__ = [
     "AuthorAssociationEnum",
+    "DiscussionCommentEvent",
     "DiscussionEvent",
     "Enterprise",
     "Installation",
@@ -14,6 +15,7 @@ __all__ = [
 
 
 from .author_association_enum import AuthorAssociationEnum
+from .discussion_comment import DiscussionCommentEvent
 from .discussions import DiscussionEvent
 from .enterprise import Enterprise
 from .installation import Installation

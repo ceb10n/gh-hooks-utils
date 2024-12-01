@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
+from ..user import User
 from .milestone_state_enum import MilestoneStateEnum
-from .user import User
 
 
 class Milestone(BaseModel):

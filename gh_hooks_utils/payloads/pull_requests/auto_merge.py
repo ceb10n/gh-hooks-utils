@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
+from ..user import User
 from .merge_method_enum import MergeMethodEnum
-from .user import User
 
 
 class AutoMerge(BaseModel):

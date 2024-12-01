@@ -1,12 +1,12 @@
 from pydantic import BaseModel
 
-from .enterprise import Enterprise
-from .installation import Installation
-from .organization import Organization
+from ..enterprise import Enterprise
+from ..installation import Installation
+from ..organization import Organization
+from ..repository import Repository
+from ..user import User
 from .pull_request import PullRequest
 from .pull_request_action_enum import PullRequestActionEnum
-from .repository import Repository
-from .user import User
 
 
 class PullRequestEvent(BaseModel):
@@ -26,7 +26,9 @@ class PullRequestEvent(BaseModel):
         )
 
     def is_merged(self) -> bool:
-        return self.pull_request is not None and self.pull_request.merged is True
+        return (
+            self.pull_request is not None and self.pull_request.merged is True
+        )
 
     def merged_by(self) -> User | None:
         return self.pull_request.merged_by

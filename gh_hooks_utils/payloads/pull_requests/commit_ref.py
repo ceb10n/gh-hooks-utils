@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
-from .repository import Repository
-from .user import User
+from ..repository import Repository
+from ..user import User
 
 
 class CommitRef(BaseModel):

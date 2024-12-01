@@ -3,7 +3,9 @@ __all__ = [
     "DiscussionCommentEvent",
     "DiscussionEvent",
     "Enterprise",
+    "InstallationEvent",
     "Installation",
+    "InstallationRepositoriesEvent",
     "Label",
     "License",
     "Organization",
@@ -18,7 +20,9 @@ from .author_association_enum import AuthorAssociationEnum
 from .discussion_comment import DiscussionCommentEvent
 from .discussions import DiscussionEvent
 from .enterprise import Enterprise
+from .install import InstallationEvent
 from .installation import Installation
+from .installation_repositories import InstallationRepositoriesEvent
 from .label import Label
 from .license import License
 from .organization import Organization

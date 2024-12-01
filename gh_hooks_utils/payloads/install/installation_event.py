@@ -9,6 +9,15 @@ from .installation_action_enum import InstallationActionEnum
 
 
 class InstallationEvent(BaseModel):
+    """Occurs when there is activity relating to a GitHub App installation.
+
+    All GitHub Apps receive this event by default. You cannot manually
+    subscribe to this event.
+
+    Availability for installation:
+        *GitHub Apps
+    """
+
     action: InstallationActionEnum
     enterprise: Enterprise | None = None
     installation: Installation | None = None

@@ -1,14 +1,14 @@
 from pydantic import BaseModel, Field
 
-from .author_association_enum import AuthorAssociationEnum
+from ..author_association_enum import AuthorAssociationEnum
+from ..label import Label
+from ..user import User
 from .auto_merge import AutoMerge
 from .commit_ref import CommitRef
-from .label import Label
 from .link import Link
 from .milestone import Milestone
 from .pull_request_state_enum import PullRequestStateEnum
 from .team import Team
-from .user import User
 
 
 class PullRequest(BaseModel):

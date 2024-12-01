@@ -24,5 +24,5 @@ class InstallationEvent(BaseModel):
     organization: Organization | None = None
     repository: Repository | None = None
     repositories: list[Repository] | None = None
-    requestes: User | None = None
+    requester: User | None = None
     sender: User

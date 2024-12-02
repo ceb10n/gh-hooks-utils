@@ -4,11 +4,11 @@ from ..enterprise import Enterprise
 from ..installation import Installation
 from ..organization import Organization
 from ..repository import Repository
+from ..repository_selection_enum import RepositorySelectionEnum
 from ..user import User
 from .installation_repositories_action_enum import (
     InstallationRepositoriesActionEnum,
 )
-from .repository_selection_enum import RepositorySelectionEnum
 
 _ENTERPRISE_DESCRIPTION = """An enterprise on GitHub. Webhook payloads contain
 the enterprise property when the webhook is configured on an enterprise account

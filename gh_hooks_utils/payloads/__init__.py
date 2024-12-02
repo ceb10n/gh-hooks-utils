@@ -13,6 +13,7 @@ __all__ = [
     "Permissions",
     "PullRequestEvent",
     "Repository",
+    "RepositorySelectionEnum",
     "User",
 ]
 
@@ -31,4 +32,5 @@ from .organization import Organization
 from .permission import Permissions
 from .pull_requests import PullRequestEvent
 from .repository import Repository
+from .repository_selection_enum import RepositorySelectionEnum
 from .user import User

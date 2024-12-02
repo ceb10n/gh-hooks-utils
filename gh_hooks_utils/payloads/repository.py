@@ -7,7 +7,7 @@ from .user import User
 
 class Repository(BaseModel):
     id: int
-    node_id: str
+    node_id: str | None = None
     name: str
     full_name: str
     license: License | None = None
@@ -79,9 +79,9 @@ class Repository(BaseModel):
     archived: bool | None = None
     disabled: bool | None = None
     visibility: str | None = None
-    pushed_at: str | None
-    created_at: str | None
-    updated_at: str | None
+    pushed_at: str | None = None
+    created_at: str | None = None
+    updated_at: str | None = None
     allow_rebase_merge: bool | None = None
     temp_clone_token: str | None = None
     allow_squash_merge: bool | None = None

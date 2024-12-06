@@ -12,7 +12,7 @@ class InstallationActionEnum(str, Enum):
     NEW_PERMISSION_ACCEPTED = "new_permission_accepted"
     """Someone granted new permissions to a GitHub App."""
 
-    SUSPEND = "SUSPEND"
+    SUSPEND = "suspend"
     """Someone blocked access by a GitHub App to their user or organization account."""
 
     UNSUSPEND = "unsuspend"

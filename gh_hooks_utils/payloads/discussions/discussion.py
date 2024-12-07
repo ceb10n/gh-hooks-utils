@@ -24,7 +24,7 @@ class Discussion(BaseModel):
     locked: bool
     node_id: str
     number: int
-    reactions: list[Reaction] | None = None
+    reactions: Reaction | None = None
     repository_url: str
     state: DiscussionStateEnum
     state_reason: DiscussionStateReasonEnum | None = None

@@ -12,7 +12,7 @@ from .discussion_action_enum import DiscussionActionEnum
 
 class DiscussionEvent(BaseModel):
     action: DiscussionActionEnum
-    answer: Answer
+    answer: Answer | None = None
     discussion: Discussion = Field(
         ..., description="A Discussion in a repository."
     )

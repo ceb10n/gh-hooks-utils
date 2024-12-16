@@ -15,7 +15,7 @@ class Comment(BaseModel):
     html_url: str
     node_id: str
     parent_id: int | None = None
-    reactions: list[Reaction] | None = None
+    reactions: Reaction | None = None
     repository_url: str
     updated_at: str
     user: User | None = None

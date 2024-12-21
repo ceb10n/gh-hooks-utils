@@ -1,3 +1,5 @@
+from typing import TypeAlias, Union
+
 __all__ = [
     "Account",
     "AuthorAssociationEnum",
@@ -34,3 +36,11 @@ from .pull_requests import PullRequestEvent
 from .repository import Repository
 from .repository_selection_enum import RepositorySelectionEnum
 from .user import User
+
+GithubWebhookEvent: TypeAlias = Union[
+    DiscussionCommentEvent,
+    DiscussionEvent,
+    InstallationEvent,
+    InstallationRepositoriesEvent,
+    PullRequestEvent,
+]

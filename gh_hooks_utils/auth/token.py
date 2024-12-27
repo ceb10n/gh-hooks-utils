@@ -14,7 +14,7 @@ _INSTALL_ID_VALUE_ERR_MSG = "Github App installation id is required"
 
 
 def get_auth_jwt(
-    app_client_id: int,
+    app_client_id: str,
     *,
     cert: bytes | None = None,
     cert_path: str | None = None,
@@ -26,7 +26,7 @@ def get_auth_jwt(
     be raised.
 
     Args:
-        app_client_id (int): The installation id for the github app
+        app_client_id (str): The installation id for the github app
         cert (bytes, optional): The pem file of the github app. Defaults to None.
         cert_path (str, optional): The path of the pem file. Defaults to None.
         exp (int, optional): Token expiration. Must be less than 600. Defaults to 600.
@@ -55,7 +55,7 @@ def get_auth_jwt(
 
 
 def _raise_for_invalid_args(
-    app_client_id: int,
+    app_client_id: str,
     cert: bytes | None = None,
     cert_path: str | None = None,
     exp: int = 600,

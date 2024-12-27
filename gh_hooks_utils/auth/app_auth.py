@@ -19,7 +19,7 @@ _headers = {
 def authenticate(
     installation_id: int,
     *,
-    app_client_id: int | None = None,
+    app_client_id: str | None = None,
     token: str | None = None,
     cert: bytes | None = None,
     cert_path: str | None = None,
@@ -30,7 +30,7 @@ def authenticate(
     Args:
         installation_id (int): The installation id. It's the identification of
             the instalation in the organization or account.
-        app_client_id (int, optional): The app id. It's the fixed id generated
+        app_client_id (str, optional): The app id. It's the fixed id generated
             for the app itself. It's only needed if you don't provide a signed
             token. Defaults to `None`.
         token (str, optional): A signed token with the github app client id.
@@ -81,7 +81,7 @@ def authenticate(
 
 
 def _get_token(
-    app_client_id: int | None = None,
+    app_client_id: str | None = None,
     token: str | None = None,
     cert: bytes | None = None,
     cert_path: str | None = None,
@@ -92,7 +92,7 @@ def _get_token(
 
     logger.debug("No jwt was provided. Creating token with the provided cert")
 
-    if app_client_id and isinstance(app_client_id, int):
+    if app_client_id and isinstance(app_client_id, str):
         return get_auth_jwt(
             app_client_id, cert=cert, cert_path=cert_path, exp=exp
         )
